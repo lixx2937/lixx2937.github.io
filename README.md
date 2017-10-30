@@ -14,8 +14,16 @@ To visit the homepage please click here:
 
 [Homepage](https://lixx2937.github.io/homepage/homepage.html)
 
+
+- - - -
 # REGISTRATION FORM #
 
-The registration form ripository contains a small project I did that gathers data people inputs and saves it in a database.
+The registration form ripository contains a small project I did.
 
-More information is in the README file within the file.
+I created a web form that saves the information that you input into a database, hosted on freemysqlhosting.net. 
+
+The form posts the information to a databasehandler.php file hosted on 000webhost.com. 
+
+I have made a copy of the php file on here so you can see the code. 
+
+Let me know if you have any questions regarding this. 
