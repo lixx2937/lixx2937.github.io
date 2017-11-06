@@ -170,7 +170,6 @@ a, p, h1,{
 .specials-class, .meal-time-title{
   text-align: center;
   text-decoration: underline;
-  margin: 20 0 0 0;
   font-size: 18;
 }
 .menu-break{
@@ -422,6 +421,9 @@ td{
   }
   .gallery-tr,.gallery-td{
     display: block;
+  }
+  .meal-time-title{
+    margin: 20 0 0 0;
   }
   #map{
     margin: 30 auto;
