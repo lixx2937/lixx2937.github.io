@@ -1,0 +1,122 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title> China King Buffet Buffet</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="CKBstyles.css">
+  </head>
+  <body>
+  <div class="topnav" id="myTopnav">
+    <div class="nav-wrapper">
+      <a href="" class= "filler nav-button nav-a"> Filler</a>
+      <a href="CKB-Homepage.html" class = "nav-button nav-a">Home</a>
+      <a href="CKB-Menu.html" class = "nav-button nav-a">Menu</a>
+      <a href="CKB-Buffet.html" class = "nav-button nav-a">Buffet</a>
+      <a href="CKB-Contact.html" class = "nav-button nav-a">Contact</a>
+    </div>
+    <a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
+  </div>
+  <div class = "frontpage">
+    <div class = "frontpage-header">
+      <h1 class = "frontpage-title"> China King Buffet </h1>
+      <p class = "title-desc"> All You Can Eat Chinese Buffet </p>
+      <p class = "title-phone"> Tel: 507-457-3298 </p>
+    </div>
+        <div class = "break"></div>
+    <div class = "top-address-wrapper">
+      <p class = "top-address">
+        1733 Service Dr. Winona, MN 55987
+      </p>
+    </div>
+    <div class = "frontpage-body">
+      <div class = "frontpage-image-wrapper">
+        <img class = "frontpage-pic" src = "Images/restaurant1.jpg" onclick="onClick(this)">
+      </div>
+      <table class = "buffet-desc">
+        <tr>
+          <td></td>
+          <td>
+            <div class = "meal-time-title Bold">Lunch</div>
+            <span class = "meal-time-desc"> (Open - 4:00 PM) </span>
+          </td>
+          <td>
+            <div class = "meal-time-title Bold">Dinner</div>
+            <span class = "meal-time-desc"> (4:01 PM - Close) </span>
+          </td>
+        </tr>
+        <tr>
+          <td><span class = "Bold">Adults</span></td>
+          <td>$8.59</td>
+          <td>$9.59</td>
+        </tr>
+        <tr>
+          <td><span class = "Bold">Child 8-11 </span> </td>
+          <td>$6.59</td>
+          <td>$7.59</td>
+        </tr>
+        <tr>
+          <td><span class = "Bold">Child 3-7 </span></td>
+          <td>$4.59</td>
+          <td>$5.59</td>
+        </tr>
+        <tr>
+          <td>
+            <span class = "Bold">Child 2 </span>
+            <div class = "Bold"> and Under </div>
+          </td>
+          <td>FREE</td>
+          <td>FREE</td>
+        </tr>
+      </table>
+      <div class = "carry-out-desc">
+        <p> <span class="Bold">Carry Out Buffet</span> - Cost is the same as an Adult buffet </p>
+      </div>
+    </div>
+    <div class = "buffet-break"> </div>
+    <div class = "slide-title">
+      <p class = "sub-title"> Gallery</p>
+    </div>
+    <div class = "gallery-wrapper">
+      <table>
+        <tr class="gallery-tr">
+          <td class="gallery-td"><img class="gallery-pics" src="Images/restaurant1.jpg" onclick="onClick(this)"></td>
+          <td class="gallery-td"><img class="gallery-pics" src="Images/restaurant2.jpg" onclick="onClick(this)"></td>
+        </tr>
+        <tr class="gallery-tr">
+          <td class="gallery-td"><img class="gallery-pics" src="Images/restaurant3.jpg" onclick="onClick(this)"></td>
+          <td class="gallery-td"><img class="gallery-pics" src="Images/buffet.jpg" onclick="onClick(this)"></td>
+        </tr>
+        <tr class="gallery-tr">
+          <td class="gallery-td"><img class="gallery-pics" src="Images/restaurant4.jpg" onclick="onClick(this)"></td>
+          <td class="gallery-td"><img class="gallery-pics" src="Images/restaurant5.jpg" onclick="onClick(this)"></td>
+        </tr>
+        <tr class="gallery-tr">
+          <td class="gallery-td"><img class="gallery-pics" src="Images/restaurant6.jpg" onclick="onClick(this)"></td>
+          <td class="gallery-td"><img class="gallery-pics" src="Images/buffet.jpg" onclick="onClick(this)"></td>
+        </tr>
+      </table>
+    </div>
+    <div class = "empty-break"></div>
+  </div>
+  <div class = "footer">
+  </div>
+  <div id="the-modal" onclick="this.style.display = 'none'">
+    <img id = "modal-img">
+  </div>
+  <script>
+  var modal = document.getElementsById('the-modal');
+  function onClick(element) {
+    document.getElementById("modal-img").src = element.src;
+    document.getElementById("the-modal").style.display = "block";
+  }
+  function myFunction() {
+      var x = document.getElementById("myTopnav");
+      if (x.className === "topnav") {
+          x.className += " responsive";
+      } else {
+          x.className = "topnav";
+      }
+  }
+  </script>
+</html>

@@ -1,0 +1,102 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title> China King Buffet Menu </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="CKBstyles.css">
+  </head>
+  <body>
+  <div class="topnav" id="myTopnav">
+    <div class="nav-wrapper">
+      <a href="" class= "filler nav-button nav-a"> Filler</a>
+      <a href="CKB-Homepage.html" class = "nav-button nav-a">Home</a>
+      <a href="CKB-Menu.html" class = "nav-button nav-a">Menu</a>
+      <a href="CKB-Buffet.html" class = "nav-button nav-a">Buffet</a>
+      <a href="CKB-Contact.html" class = "nav-button nav-a">Contact</a>
+    </div>
+    <a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
+  </div>
+  <div class = "frontpage">
+    <div class = "frontpage-header">
+      <h1 class = "frontpage-title"> China King Buffet </h1>
+      <p class = "title-desc"> All You Can Eat Chinese Buffet </p>
+      <p class = "title-phone"> Tel: 507-457-3298 </p>
+    </div>
+    <div class = "break"></div>
+    <div class = "top-address-wrapper">
+      <p class = "top-address">
+        1733 Service Dr. Winona, MN 55987
+      </p>
+    </div>
+    <div class = "frontpage-body">
+      <h2 class = "menu-title"> Menu </h2>
+      <p class = "menu-description" > Click on the menu to view the PDF </p>
+      <div class = "menu-wrapper">
+        <a class = "no-float" href = "fullmenu.pdf" target="_blank">
+          <img class = "frontpage-menu" src = "Images/menu1.png">
+        </a>
+      </div>
+    </div>
+    <div class = "menu-break"> </div>
+    <div class = "specials">
+      <h2 class = "specials-title"> Popular Specials </h2>
+      <div class = "specials-wrapper">
+        <div class = "sub-specials">
+          <p class = "specials-class Bold"> Lunch Special Combo</p>
+          <p class = "specials-desc"> (Only $4.50 plus tax) </p>
+          <p class = "item"> <span class= "daimond"> </span>
+            Chicken Lo Mein <span class= "daimond"> </span>
+          </p>
+          <p class = "item"> <span class= "daimond"> </span>
+            Beef w. Broccoli <span class= "daimond"> </span>
+          </p>
+          <p class = "item"> <span class= "daimond"> </span>
+            Shrimp Chow Mein <span class= "daimond"> </span>
+          </p>
+        </div>
+        <div class = "sub-specials middle">
+          <p class = "specials-class Bold"> Dinner Special Combo</p>
+          <p class = "specials-desc"> (Only $6.50 plus tax) </p>
+          <p class = "item"> <span class= "daimond"> </span>
+            Sweet & Sour Chicken <span class= "daimond"> </span>
+          </p>
+          <p class = "item"> <span class= "daimond"> </span>
+            Chicken w. Broccoli <span class= "daimond"> </span>
+          </p>
+          <p class = "item"> <span class= "daimond"> </span>
+            Sesame Chicken <span class= "daimond"> </span>
+          </p>
+        </div>
+        <div class = "sub-specials">
+          <p class = "specials-class Bold"> House Special Meal</p>
+          <p class = "item house"> <span class= "daimond"> </span>
+            General Tso's Chicken <span class= "daimond"> </span>
+          </p>
+          <p class = "specials-desc"> ($9.30 plus tax) </p>
+          <p class = "item house"> <span class= "daimond"> </span>
+            Mongolian Beef <span class= "daimond"> </span>
+          </p>
+          <p class = "specials-desc"> ($10.50 plus tax) </p>
+          <p class = "item house"> <span class= "daimond"> </span>
+            Dragon & Phoenix <span class= "daimond"> </span>
+          </p>
+          <p class = "specials-desc"> ($12.50 plus tax) </p>
+        </div>
+      </div>
+      <div class = "empty-break"></div>
+    </div>
+  </div>
+  <div class = "footer">
+  </div>
+  <script>
+  function myFunction() {
+      var x = document.getElementById("myTopnav");
+      if (x.className === "topnav") {
+          x.className += " responsive";
+      } else {
+          x.className = "topnav";
+      }
+  }
+  </script>
+</html>

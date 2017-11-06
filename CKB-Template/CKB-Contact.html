@@ -1,0 +1,104 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title> China King Buffet Contact </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="CKBstyles.css">
+  </head>
+  <body>
+  <div class="topnav" id="myTopnav">
+    <div class="nav-wrapper">
+      <a href="" class= "filler nav-button nav-a"> Filler</a>
+      <a href="CKB-Homepage.html" class = "nav-button nav-a">Home</a>
+      <a href="CKB-Menu.html" class = "nav-button nav-a">Menu</a>
+      <a href="CKB-Buffet.html" class = "nav-button nav-a">Buffet</a>
+      <a href="CKB-Contact.html" class = "nav-button nav-a">Contact</a>
+    </div>
+    <a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
+  </div>
+  <div class = "frontpage">
+    <div class = "frontpage-header">
+      <h1 class = "frontpage-title"> China King Buffet </h1>
+      <p class = "title-desc"> All You Can Eat Chinese Buffet </p>
+      <p class = "title-phone"> Tel: 507-457-3298 </p>
+    </div>
+        <div class = "break"></div>
+    <div class = "top-address-wrapper">
+      <p class = "top-address">
+        1733 Service Dr. Winona, MN 55987
+      </p>
+    </div>
+    <div class = "contact-us-wrapper">
+      <h2 class = "contact-us-title"> Contact </h2>
+      <p class = "sub-desc">
+        <span class = "up-pointer"></span>
+        Our Telephone and Address are above
+        <span class = "up-pointer"></span>
+      </p>
+      <div class = "contact-us-body">
+        <div class = "contact-hours">
+          <p class = "contact-sub-title"> Open Hours </p>
+          <p class = "open-hours">
+            Sun. - Thurs. 11.00 AM - 9.30 AM
+          </p>
+          <p class = "open-hours">
+            Fri. & Sat. 11.00 AM - 10.30 AM
+          </p>
+          <a class = "open-maps" onclick="myNavFunc()">
+            Open in Google Maps
+          </a>
+        </div>
+        <div id="map"></div>
+      </div>
+    </div>
+  </div>
+  <div class = "footer">
+  </div>
+  <script>
+  function myFunction() {
+      var x = document.getElementById("myTopnav");
+      if (x.className === "topnav") {
+          x.className += " responsive";
+      } else {
+          x.className = "topnav";
+      }
+  }
+  function myNavFunc(){
+    // If it's an iPhone..
+    if( (navigator.platform.indexOf("iPhone") != -1)
+        || (navigator.platform.indexOf("iPod") != -1)
+        || (navigator.platform.indexOf("iPad") != -1))
+         window.open("maps://maps.google.com/maps?daddr=lat,long&amp;ll=");
+    else
+         window.open("http://maps.google.com/maps?daddr=lat,long&amp;ll=");
+  }
+  </script>
+  <script>
+      function initMap() {
+        var uluru = {lat: 44.0526784, lng: -91.6884256};
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 15,
+          center: uluru
+        });
+        var contentString = '<h><strong> China King Buffet </strong> </h>' +
+        '<p> 1733 Service Drive </p> <p> Winona, Minnesota 55987</p>';
+
+       var infowindow = new google.maps.InfoWindow({
+         content: contentString
+       });
+
+       var marker = new google.maps.Marker({
+         position: uluru,
+         map: map,
+         title: 'Uluru (Ayers Rock)'
+       });
+       marker.addListener('click', function() {
+         infowindow.open(map, marker);
+       });
+      }
+  </script>
+  <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCGtVMKciAR2q8ybpeqKBrPOT9KztxLoxM&callback=initMap">
+  </script>
+</html>

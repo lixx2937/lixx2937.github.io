@@ -1,0 +1,143 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title> China King Buffet Homepage </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="CKBstyles.css">
+  </head>
+  <body>
+  <div class="topnav" id="myTopnav">
+    <div class="nav-wrapper">
+      <a href="" class= "filler nav-button nav-a"> Filler</a>
+      <a href="CKB-Homepage.html" class = "nav-button nav-a">Home</a>
+      <a href="CKB-Menu.html" class = "nav-button nav-a">Menu</a>
+      <a href="CKB-Buffet.html" class = "nav-button nav-a">Buffet</a>
+      <a href="CKB-Contact.html" class = "nav-button nav-a">Contact</a>
+    </div>
+    <a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
+  </div>
+  <div class = "frontpage">
+    <div class = "frontpage-header">
+      <h1 class = "frontpage-title"> China King Buffet </h1>
+      <p class = "title-desc"> All You Can Eat Chinese Buffet </p>
+      <p class = "title-phone"> Tel: 507-457-3298 </p>
+    </div>
+        <div class = "break"></div>
+    <div class = "top-address-wrapper">
+      <p class = "top-address">
+        1733 Service Dr. Winona, MN 55987
+      </p>
+    </div>
+    <div class = "frontpage-body">
+      <div class = "frontpage-image-wrapper">
+        <img class = "frontpage-pic" src = "Images/restaurant2.jpg" onclick="onClick(this)">
+      </div>
+      <div class = "frontpage-body-desc">
+        <p class = "body-desc">
+          Thank you for visiting our homepage
+        </p>
+        <p class = "body-desc">
+          We serve a wide variety of <span class = "Bold">Chinese</span> cuisines on our <span class = "Bold">All You Can Eat Buffet</span>
+        </p>
+        <p class = "body-desc">
+          We look forward to seeing you in the near future
+        </p>
+        <p class = "open-hours">
+          Sun. - Thurs. 11.00 AM - 9.30 AM
+        </p>
+        <p class = "open-hours">
+          Fri. & Sat. 11.00 AM - 10.30 AM
+        </p>
+      </div>
+    </div>
+    <div class = "sec-break"> </div>
+    <div class = "slide-title">
+      <p class = "sub-title"> Takeout & Dine-In Orders Available </p>
+      <a class = "to-menu" href = "CKB-Menu.html"> Click Here to View Menu </a>
+    </div>
+    <div class = "slide-wrapper">
+      <div class = "slide-nav">
+        <span class = "slide-left" onclick="plusDivs(-1)"></span>
+      </div>
+      <div class = "slide-container">
+        <div class = "images">
+          <img class="slide-pics" src="Images/General.jpg" onclick="onClick(this)">
+          <img class="slide-pics" src="Images/Family.jpg" onclick="onClick(this)">
+          <img class="slide-pics" src="Images/Rolls.jpg" onclick="onClick(this)">
+          <img class="slide-pics" src="Images/Sweet.jpg" onclick="onClick(this)">
+          <img class="slide-pics" src="Images/Cream.jpg" onclick="onClick(this)">
+        </div>
+        <div class = "image-desc">
+          <div class = "slide-desc">
+            <p class = "sub-name"> Lunch Combo General Tso' Chicken </p>
+            <p class = "sub-desc"> Only $6.50 plus tax </p>
+          </div>
+          <div class = "slide-desc">
+            <p class = "sub-name"> House Special Happy Family </p>
+            <p class = "sub-desc"> Shrimp, Scallops, Chicken, & Beef with vegetables</p>
+            <p class = "sub-desc"> $10.95 plus tax</p>
+          </div>
+          <div class = "slide-desc">
+            <p class = "sub-name"> Appitizer Egg Rolls & Spring Rolls </p>
+            <p class = "sub-desc"> 2 for 99¢ plus tax </p>
+          </div>
+          <div class = "slide-desc">
+            <p class = "sub-name"> Dinner Special Sweet and Sour Chicken</p>
+            <p class = "sub-desc"> Only $6.50 plus tax and comes with Egg Roll</p>
+          </div>
+          <div class = "slide-desc">
+            <p class = "sub-name"> Ice Cream!</p>
+            <p class = "sub-desc"> Included in every meal </p>
+          </div>
+        </div>
+      </div>
+      <div class = "slide-nav">
+        <span class = "slide-right" onclick="plusDivs(1)"></span>
+      </div>
+    </div>
+  </div>
+  <div class = "footer">
+  </div>
+  <div id="the-modal" onclick="this.style.display = 'none'">
+    <img id = "modal-img">
+  </div>
+  <script>
+  var modal = document.getElementsById('the-modal');
+  function onClick(element) {
+    document.getElementById("modal-img").src = element.src;
+    document.getElementById("the-modal").style.display = "block";
+  }
+  </script>
+  <script>
+  var slideIndex = 1;
+  showDivs(slideIndex);
+  function plusDivs(n) {
+    showDivs(slideIndex += n);
+  }
+  function currentDiv(n) {
+    showDivs(slideIndex = n);
+  }
+  function showDivs(n) {
+    var i;
+    var x = document.getElementsByClassName("slide-pics");
+    var y = document.getElementsByClassName("slide-desc");
+    if (n > x.length) {slideIndex = 1}
+    if (n < 1) {slideIndex = x.length}
+    for (i = 0; i < x.length; i++) {
+       x[i].style.display = "none";
+       y[i].style.display = "none";
+    }
+    x[slideIndex-1].style.display = "block";
+    y[slideIndex-1].style.display = "block";
+  }
+  function myFunction() {
+      var x = document.getElementById("myTopnav");
+      if (x.className === "topnav") {
+          x.className += " responsive";
+      } else {
+          x.className = "topnav";
+      }
+  }
+  </script>
+</html>
