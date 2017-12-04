@@ -1,0 +1,204 @@
+<html>
+<head>
+  <style>
+  body{
+    margin: 0;
+    width: 100%;
+    height: 100%;
+  }
+  .overlay{
+    height:0;
+    width:100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0,0.2);
+    overflow-y: hidden;
+    transition: 1s;
+    display: flex;
+  }
+  .overlay-content {
+    position: relative;
+    display: block;
+    margin: auto;
+    text-align: center;
+  }
+  .overlay a {
+    padding: 10px 0px;
+    text-decoration: none;
+    font-size: 20px;
+    color: white;
+    display: block;
+    transition: 0.7s;
+    width: 150px;
+    margin: 20px auto;
+    background-color: gray;
+    border-radius: 20px;
+  }
+  .overlay a:hover{
+    color: black;
+    background-color:black;
+  }
+  .tmenu{
+    font-size: 30px;
+    cursor: pointer;
+    color: black;
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    right: 10;
+  }
+  </style>
+</head>
+<body>
+<div id="myNav" class="overlay">
+  <div class="overlay-content">
+    <div>
+      <a href="Nav_Scatter.html">Scatter !!!</a>
+      <a href="Nav_Bouncing.html">Bouncing <^></a>
+      <a href="Nav_Stars.html">Stars ***</a>
+      <a>TextRain ' ' '</a>
+    </div>
+  </div>
+</div>
+<canvas></canvas>
+<span class="tmenu" id="menu" onclick="openNav()">&#9776;</span>
+
+<script>
+var canvas = document.querySelector('canvas');
+var height = window.innerHeight;
+var width = window.innerWidth;
+canvas.height = height;
+canvas.width = width;
+var c = canvas.getContext('2d');
+c.font = "20px Arial";
+c.lineWidth = 5;
+var trans = 200;
+var object = 0;
+function letter(x,l,s){
+  this.dur = 0;
+  this.x = x;
+  this.y = -20;
+  this.l = l;
+  this.s = s;
+  this.draw = function(){
+    c.fillStyle = "rgba(0, 0, 0, 0.5)";
+    c.fillText(this.l,this.x,this.y);
+  }
+  this.update = function(){
+    if(this.y > height){
+      this.y = -20;
+      this.s = Math.random()*7+3;
+    }
+    else if(this.dur > 20){
+      this.y = -20;
+      this.s = Math.random()*7+3;
+      this.dur = 0;
+    }
+    else{
+      if (canvas.getContext('2d').getImageData(this.x, this.y, 1, 1).data[3] > trans) {
+        this.y = -20;
+        this.s = Math.random()*7+3;
+      }
+      else if(canvas.getContext('2d').getImageData(this.x, this.y+4, 1, 1).data[3] > trans
+      || canvas.getContext('2d').getImageData(this.x, this.y+5, 1, 1).data[3] > trans
+      || canvas.getContext('2d').getImageData(this.x, this.y+6, 1, 1).data[3] > trans
+      || canvas.getContext('2d').getImageData(this.x, this.y+7, 1, 1).data[3] > trans
+      || canvas.getContext('2d').getImageData(this.x, this.y+8, 1, 1).data[3] > trans){
+                this.s = Math.random() * 3 + 2;
+                this.dur ++;
+      }
+      else{
+        this.y += this.s;
+      }
+    }
+    this.draw();
+  }
+}
+var letterArray = [];
+var pos = 0;
+var text = "Text rain is pretty cool !";
+var count = 0;
+while(pos < width - 20){
+  letterArray.push(new letter(pos,text.charAt(count % text.length),Math.random()*7+3));
+  pos += 3;
+  count++;
+}
+var load = setInterval(animate,20);
+function animate(){
+  c.clearRect(0,0,innerWidth,innerHeight);
+  switch (object) {
+    case 1:
+      c.beginPath();
+      c.moveTo(width/3,height/2);
+      c.lineTo(2*width/3,height/2);
+      c.stroke();
+      break;
+    case 2:
+      c.fillStyle = "rgba(0, 0, 0, 1)";
+      c.beginPath();
+      c.arc(3*width/8,height/2,this.width/8,Math.PI,0,true);
+      c.arc(5*width/8,height/2,this.width/8,Math.PI,Math.PI*2,false);
+      c.stroke();
+      break;
+    case 3:
+      c.fillStyle = "rgba(0, 0, 0, 1)";
+      c.beginPath();
+      if(width < 600){
+        c.arc(width/2,height/2,this.width/4,7.5*Math.PI/4,4.5*Math.PI/4,true)
+      }
+      else{
+        c.arc(width/2,height/2,this.width/6,7.5*Math.PI/4,4.5*Math.PI/4,true)
+      }
+      c.fill();
+      c.beginPath();
+      c.moveTo(width/2,height/2-this.width/6-10);
+      c.lineTo(width/2,height/2+100);
+      c.stroke();
+      c.beginPath();
+      c.arc(width/2-20,height/2+100,20,0,Math.PI,false);
+      c.stroke();
+      break;
+    default: break;
+  }
+  for(var i = 0; i < letterArray.length;i++){
+    letterArray[i].update();
+  }
+}
+function change(){
+  if(object < 3){
+    object++;
+  }
+  else{
+    object = 0;
+  }
+}
+function resize(){
+  canvas = document.querySelector('canvas');
+  height = window.innerHeight;
+  width = window.innerWidth;
+  canvas.width = width;
+  canvas.height = height;
+  c = canvas.getContext('2d');
+  c.font = "20px Arial";
+  c.lineWidth = 5;
+  while(pos < width - 20){
+    letterArray.push(new letter(pos,text.charAt(count % text.length),Math.random()*7+3));
+    pos += 3;
+    count++;
+  }
+}
+canvas.addEventListener("click",change);
+window.addEventListener("resize",resize);
+
+function openNav() {
+    document.getElementById("myNav").style.height = "100%";
+}
+
+function closeNav() {
+    document.getElementById("myNav").style.height = "0%";
+}
+document.querySelector('div.overlay').addEventListener("click",closeNav);
+</script>
+</body>
+</html>

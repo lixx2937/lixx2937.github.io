@@ -1,0 +1,164 @@
+<html>
+<head>
+  <style>
+  body{
+    margin: 0;
+    width: 100%;
+    height: 100%;
+  }
+  .overlay{
+    height:0;
+    width:100%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0,0.3);
+    overflow-y: hidden;
+    transition: 1s;
+    display: flex;
+  }
+  .overlay-content {
+    position: relative;
+    display: block;
+    margin: auto;
+    text-align: center;
+  }
+  .overlay a {
+    padding: 10px 0px;
+    text-decoration: none;
+    font-size: 20px;
+    color: white;
+    display: block;
+    transition: 0.7s;
+    width: 150px;
+    margin: 20px auto;
+    background-color: rgba(0,0,0,0);
+    border-radius: 20px;
+  }
+  .overlay a:hover{
+    color: black;
+    background-color:white;
+    cursor: pointer;
+  }
+  .tmenu{
+    font-size: 30px;
+    cursor: pointer;
+    color: black;
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    right: 10;
+  }
+  </style>
+</head>
+<body>
+<div id="myNav" class="overlay">
+  <div class="overlay-content">
+  	<div>
+      <a href="Nav_Scatter.html">Scatter !!!</a>
+      <a> Bouncing <^></a>
+      <a href="Nav_Stars.html">Stars ***</a>
+      <a href="Nav_TextRain.html">TextRain ' ' '</a>
+    </div>
+  </div>
+</div>
+<canvas></canvas>
+<span class="tmenu" id="menu" onclick="openNav()">&#9776;</span>
+
+<script>
+var star = false;
+var canvas = document.querySelector('canvas');
+var w = window.innerWidth;
+var h = window.innerHeight;
+canvas.width = w;
+canvas.height = h;
+var c = canvas.getContext('2d');
+var colors = ['blue','green','yellow','orange','red','purple'];
+function Circle(x,y,dx,dy,r,color){
+  this.x = x;
+  this.y = y;
+  this.dx = dx;
+  this.dy = dy;
+  this.r = r;
+  var d1 = Math.sin(Math.PI*2/20);
+  var d2 = Math.sin(Math.PI*2/10);
+  var d3 = Math.sin(Math.PI*2*3/20);
+  var d4 = Math.sin(Math.PI*2/5);
+  this.draw = function(){
+    c.fillStyle = color;
+    c.beginPath();
+    if(star){
+      c.moveTo(this.x,this.y-this.r);
+      c.lineTo(this.x+d2*this.r,this.y+this.r*d3)
+      c.lineTo(this.x-d4*this.r,this.y-d1*this.r);
+      c.lineTo(this.x+d4*this.r,this.y-d1*this.r);
+      c.lineTo(this.x-d2*this.r,this.y+this.r*d3);
+      c.lineTo(this.x,this.y-r);
+    }
+    else{
+      c.arc(this.x,this.y,this.r,0,Math.PI*2,false);
+    }
+    c.fill();
+  }
+  this.update = function(){
+    w = window.innerWidth;
+    h = window.innerHeight;
+    if(this.x > w - this.r || this.x < this.r){
+      this.dx = -this.dx;
+    }
+    if(this.y > h - this.r || this.y < this.r){
+      this.dy = -this.dy;
+    }
+    if(this.y > h - this.r + 2|| this. x > w - this.r + 2|| this.x < this.r - 2 || this.y < this.r - 2){
+      this.x = Math.random() * w;
+      this.y = Math.random() * h;
+    }
+    this.x += this.dx;
+    this.y += this.dy;
+    this.draw();
+  }
+}
+var circleArray= [];
+for(var i = 0; i < 100;i++){
+  var x = Math.random() * w;
+  var y = Math.random() * h;
+  var dx = (Math.random()-.5)*5;
+  var dy = (Math.random()-.5)*5;
+  circleArray.push(new Circle(x,y,dx,dy,10,colors[i%colors.length]));
+}
+function animate(){
+  requestAnimationFrame(animate);
+  c.clearRect(0,0,innerWidth,innerHeight);
+  for(var i = 0; i < circleArray.length; i++){
+    circleArray[i].update();
+  }
+}
+animate();
+function change(){
+  if(star){star = false;}
+  else{star = true};
+}
+function resize(){
+  canvas = document.querySelector('canvas');
+  w = window.innerWidth;
+  h = window.innerHeight;
+  canvas.width = w;
+  canvas.height = h;
+  c = canvas.getContext('2d');
+}
+canvas.addEventListener("click",change);
+window.addEventListener("resize",resize);
+
+function openNav() {
+    document.getElementById("myNav").style.height = "100%";
+}
+
+function closeNav() {
+    document.getElementById("myNav").style.height = "0%";
+}
+document.querySelector('div.overlay').addEventListener("click",closeNav);
+</script>
+
+</body>
+</html>
