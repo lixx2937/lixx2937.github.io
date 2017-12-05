@@ -101,11 +101,7 @@ function letter(x,l,s){
         this.y = -20;
         this.s = Math.random()*7+3;
       }
-      else if(canvas.getContext('2d').getImageData(this.x, this.y+4, 1, 1).data[3] > trans
-      || canvas.getContext('2d').getImageData(this.x, this.y+5, 1, 1).data[3] > trans
-      || canvas.getContext('2d').getImageData(this.x, this.y+6, 1, 1).data[3] > trans
-      || canvas.getContext('2d').getImageData(this.x, this.y+7, 1, 1).data[3] > trans
-      || canvas.getContext('2d').getImageData(this.x, this.y+8, 1, 1).data[3] > trans){
+      else if(canvas.getContext('2d').getImageData(this.x, this.y+4, 1, 1).data[3] > trans){
                 this.s = Math.random() * 3 + 2;
                 this.dur ++;
       }
@@ -118,7 +114,7 @@ function letter(x,l,s){
 }
 var letterArray = [];
 var pos = 0;
-var text = "Text rain is pretty cool !";
+var text = "Text rain is pretty cool!";
 var count = 0;
 while(pos < width - 20){
   letterArray.push(new letter(pos,text.charAt(count % text.length),Math.random()*7+3));
