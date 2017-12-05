@@ -118,7 +118,7 @@ var text = "Text rain is pretty cool!";
 var count = 0;
 while(pos < width - 20){
   letterArray.push(new letter(pos,text.charAt(count % text.length),Math.random()*7+3));
-  pos += 3;
+  pos += 5;
   count++;
 }
 var load = setInterval(animate,20);
