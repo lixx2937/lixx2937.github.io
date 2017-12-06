@@ -97,17 +97,17 @@ function letter(x,l,s){
       this.dur = 0;
     }
     else{
-      if (canvas.getContext('2d').getImageData(this.x, this.y, 1, 1).data[3] > trans) {
-        this.y = -20;
-        this.s = Math.random()*7+3;
-      }
-      else if(canvas.getContext('2d').getImageData(this.x, this.y+4, 1, 1).data[3] > trans){
-                this.s = Math.random() * 3 + 2;
-                this.dur ++;
-      }
-      else{
-        this.y += this.s;
-      }
+      // if (canvas.getContext('2d').getImageData(this.x, this.y, 1, 1).data[3] > trans) {
+      //   this.y = -20;
+      //   this.s = Math.random()*7+3;
+      // }
+      // else if(canvas.getContext('2d').getImageData(this.x, this.y+4, 1, 1).data[3] > trans){
+      //           this.s = Math.random() * 3 + 2;
+      //           this.dur ++;
+      // }
+      // else{
+         this.y += this.s;
+      // }
     }
     this.draw();
   }
