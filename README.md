@@ -1,29 +1,39 @@
-# HOMEPAGE #
+#WELCOME!#
 
-The homepage ripository contains the source code and pictures that I used for my homepage. 
+Thanks for dropping by my github. Please take a look around.
 
-This is a homepage that I created to showcase my skills/projects/experiences. 
+This is an overview of what is all here so far.
 
-It is also my first homepage so there are probably some things I need to improve on.
+If you have any comments to share please feel free to email me. I would be happy to hear them.
 
-If you see anything wrong that catches your eye, I would love to hear feed back on what you think I need to change.
+## HOMEPAGE ##
 
-## Visiting ##
+The homepage repository contains the source code and pictures that I used for my first homepage.
 
-To visit the homepage please click here:
+To visit the actual homepage please click here:
 
-[Homepage](https://lixx2937.github.io/homepage/homepage.html)
-
+[http://www.andyl.net](http://andyl.net)
 
 - - - -
-# REGISTRATION FORM #
 
-The registration form ripository contains a small project I did.
+## CKB-TEMPLATE ##
 
-I created a web form that saves the information that you input into a database, hosted on freemysqlhosting.net. 
+This is the source code used in creating the website for the New China King Buffet.
 
-The form posts the information to a databasehandler.php file hosted on 000webhost.com. 
+This was a project I did for my family and helped me learn a lot about using HTML/CSS.
 
-I have made a copy of the php file on here so you can see the code. 
+To visit the website click here:
 
-Let me know if you have any questions regarding this. 
+[http://www.newchinakingbuffet.com](http://www.newchinakingbuffet.com)
+
+- - - -
+
+## ANIMATIONS ##
+
+I haven't used JavaScript much and decided to try to make some animations using it.
+
+Some of them turned out pretty cool. They are all liked together using a nav bar.
+
+This is one of the animations:
+
+[Stars](https://lixx2937.github.io/Animations/Scatter.html)
