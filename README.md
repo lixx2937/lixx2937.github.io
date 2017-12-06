@@ -2,7 +2,7 @@
 
 Thanks for dropping by my github. Please take a look around.
 
-This is an overview of what is all here so far.
+This is an overview of what I have so far.
 
 If you have any comments to share please feel free to email me. I would be happy to hear them.
 
@@ -32,8 +32,8 @@ To visit the website click here:
 
 I haven't used JavaScript much and decided to try to make some animations using it.
 
-Some of them turned out pretty cool. They are all liked together using a nav bar.
+Some of them turned out pretty cool. They are all linked together using a nav bar.
 
 This is one of the animations:
 
-[Stars](https://lixx2937.github.io/Animations/Scatter.html)
+[Scatter](https://lixx2937.github.io/Animations/Scatter.html)
