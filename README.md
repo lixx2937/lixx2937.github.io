@@ -4,7 +4,11 @@ This repo is out dated
 
 To visit the new homepage please click here:
 
-[https://andyli.io](http://andyli.io)
+[https://andyli.io](https://andyli.io)
+
+The repo is linked here:
+
+[https://github.com/lixx2937/homepage](https://github.com/lixx2937/homepage)
 
 # WELCOME! #
 
