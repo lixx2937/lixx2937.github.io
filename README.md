@@ -1,3 +1,11 @@
+# OLD WEBSITE #
+
+This repo is out dated
+
+To visit the new homepage please click here:
+
+[https://andyli.io](http://andyli.io)
+
 # WELCOME! #
 
 Thanks for dropping by my github. Please take a look around.
