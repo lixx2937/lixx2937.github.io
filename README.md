@@ -4,7 +4,7 @@ This repo is out dated
 
 To visit the new homepage please click here:
 
-[https://andyli.io](https://andyli.io)
+[https://andyli.me](https://andyli.me)
 
 The repo is linked here:
 
